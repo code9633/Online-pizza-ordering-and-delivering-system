@@ -1,0 +1,15 @@
+
+.success{
+    color: #3ae374;
+    font-weight: 700;
+    font-size: 1.2em; 
+    text-align: left; 
+}
+
+.error{
+    color: #ff4d4d;
+    font-weight: 700;
+    font-size: 1.2em; 
+    text-align: left;   
+}
+
