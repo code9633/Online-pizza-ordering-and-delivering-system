@@ -1,15 +1,15 @@
 
 .success{
     color: #3ae374;
-    font-weight: 700;
-    font-size: 1.2em; 
+    font-weight: 600;
+    font-size: 1em; 
     text-align: left; 
 }
 
 .error{
     color: #ff4d4d;
-    font-weight: 700;
-    font-size: 1.2em; 
+    font-weight: 600;
+    font-size: 1em; 
     text-align: left;   
 }
 

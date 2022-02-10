@@ -38,7 +38,7 @@
     <div class="bg-white py-2 collapse-inner rounded">
       <h6 class="collapse-header">Manage Components:</h6>
       <a class="collapse-item" href="manage-category.php">Category</a>
-      <a class="collapse-item" href="cards.html">Food</a>
+      <a class="collapse-item" href="manage-pizza.php">Food</a>
       <a class="collapse-item" href="buttons.html">Order</a>
     </div>
   </div>

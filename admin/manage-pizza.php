@@ -10,8 +10,8 @@ include('includes/navbar.php');
   <!-- DataTales Example -->
   <div class="card shadow mb-4">
       <div class="card-header py-3">
-        <form action="add-category.php" method="POST">
-          <h6 class="m-0 font-weight-bold text-primary">Manage Category
+        <form action="add-pizza.php" method="POST">
+          <h6 class="m-0 font-weight-bold text-primary">Manage Pizza
             <button type="submit" class="btn btn-primary" >
                  Add 
             </button>
@@ -47,11 +47,18 @@ include('includes/navbar.php');
                   }
                   
                   //Display the message if failed to remove the image
-                  if (isset($_SESSION['remove'])){
+                  if (isset($_SESSION['upload'])){
 
-                    echo $_SESSION['remove'];
-                    unset ($_SESSION['remove']);
-                }
+                    echo $_SESSION['upload'];
+                    unset ($_SESSION['upload']);
+                  }
+
+                  if (isset($_SESSION['unauthorized'])){
+                    
+                    echo $_SESSION['unauthorized'];
+                    unset($_SESSION['unauthorized']);
+                  }
+                  
               ?>
           </div>
 
@@ -61,6 +68,7 @@ include('includes/navbar.php');
                       <tr>
                           <th> S.N </th>
                           <th> Title </th>
+                          <th> Price </th>
                           <th> Image </th>
                           <th> Featured </th>
                           <th> Active </th>
@@ -73,14 +81,14 @@ include('includes/navbar.php');
         
                   <?php
                       //Query to get all categories fromm datacbase
-                      $sql2 = "SELECT * FROM category";
+                      $sql = "SELECT * FROM food";
 
                       //Execute the query
-                      $result2 = mysqli_query($con, $sql2);
+                      $result = mysqli_query($con, $sql);
 
-                      if($result2 == true){
+                      if($result == true){
                           //Count rows to check wether we have data in database or not
-                        $row_count = mysqli_num_rows($result2);
+                        $row_count = mysqli_num_rows($result);
 
                         //create serial number variable and design value
                         $sn = 1;
@@ -89,9 +97,10 @@ include('includes/navbar.php');
                           //we have data in database
                           //get the data and displayed
 
-                          while($row = mysqli_fetch_assoc($result2)){
+                          while($row = mysqli_fetch_assoc($result)){
                             $id = $row['id'];
                             $title = $row['title'];
+                            $price = $row['price'];
                             $image_name = $row['image_name'];
                             $featured = $row['featured'];
                             $active = $row['active'];
@@ -101,6 +110,7 @@ include('includes/navbar.php');
                             <tr>
                               <td><?php echo $sn++;?></td>
                               <td><?php echo $title;?></td>
+                              <td><?php echo $price;?></td>
 
                               <td>
                                 <?php
@@ -115,7 +125,7 @@ include('includes/navbar.php');
                                     }
                                     else{
                                       //Display the message
-                                      echo "<div class = 'error'>Image Not Added</div>";
+                                      echo "<p class = 'error'>Image Not Added</p>";
                                     }
                                 
                                 ?>
@@ -125,12 +135,12 @@ include('includes/navbar.php');
                               <td><?php echo $active;?></td>
 
                               <td>
-                                  <form action="update-category.php?id=<?php echo $id;?>" method="POST">
+                                  <form action="update-pizza.php?id=<?php echo $id;?>" method="POST">
                                     <button type="submit" name="edit_btn" class="btn btn-success"> EDIT</button>
                                   </form>
                               </td>
                               <td>
-                                  <form action="delete-category.php?id=<?php echo $id;?>&image_name=<?php echo $image_name;?>" method="POST">
+                                  <form action="delete-pizza.php?id=<?php echo $id;?>&image_name=<?php echo $image_name;?>" method="POST">
                                     <button type="submit" name="delete_btn" class="btn btn-danger"> DELETE</button>
                                   </form>
                               </td>
@@ -147,7 +157,7 @@ include('includes/navbar.php');
                           ?>
                           <tr>
                             <div>
-                                <td colspan="7" class="error " style="text-align: center;">No Category Added.</td>
+                                <td colspan="8" class="error " style="text-align: center;">Food not Added Yet.</td>
                             </div> 
                           </tr>
                           <?php

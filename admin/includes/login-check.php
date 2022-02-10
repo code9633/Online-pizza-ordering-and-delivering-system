@@ -7,7 +7,7 @@
 
         //user is not logged in
         //redirect to login page with message
-        $_SESSION['no-login-message'] =  "Access Denied!! Please Login..</p> ";
+        $_SESSION['no-login-message'] =  "<p style ='text-align:center;color: red;'>Access Denied!! Please Login..</p> ";
         //redirect to login page
         header('location:'.SITEURL.'admin/login.php');   
     }
