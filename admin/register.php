@@ -118,6 +118,12 @@ if (isset($_POST['registerbtn'])) {
                     echo $_SESSION['update'];
                     unset($_SESSION['update']);
                   }
+                  
+                  //Display the message whether admin remove successfully or not
+                  if(isset($_SESSION['delete'])){
+                    echo $_SESSION['delete'];
+                    unset($_SESSION['delete']);
+                  }
               ?>
           </div>
 
@@ -175,8 +181,7 @@ if (isset($_POST['registerbtn'])) {
                               </form>
                             </td>
                             <td>
-                              <form action="" method="post">
-                                <input type="hidden" name="delete_id" value="">
+                              <form action="delete-admin.php?id=<?php echo $id;?>" method="post">
                                 <button type="submit" name="delete_btn" class="btn btn-danger"> DELETE</button>
                               </form>
                             </td>

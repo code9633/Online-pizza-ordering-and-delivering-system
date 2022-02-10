@@ -29,21 +29,21 @@ include('includes/navbar.php');
           <div class="form-group">
             <label> Featured  </label> 
             <span> &nbsp; &nbsp; &nbsp;</span>
-            <input type="radio" name="featured" id="inlineRadio1" value="Yes" >
-            <label class="form-check-label" for="inlineRadio1">Yes</label>
+            <input type="radio" name="featured" id="inlineRadio1" value="Yes" > Yes
+           
             <span> &nbsp;</span>
-            <input type="radio" name="featured" id="inlineRadio1" value="No" >
-            <label class="form-check-label" for="inlineRadio1">No</label>
+            <input type="radio" name="featured" id="inlineRadio1" value="No" > No
+            
           </div>
 
           <div class="form-group">
             <label> Active </label> 
             <span> &nbsp; &nbsp; &nbsp;</span>
-            <input type="radio" name="active" id="inlineRadio1" value="Yes" >
-            <label class="form-check-label" for="inlineRadio1">Yes</label>
+            <input type="radio" name="active" id="inlineRadio1" value="Yes" > Yes
+            
             <span> &nbsp;</span>
-            <input type="radio" name="active" id="inlineRadio1" value="No" >
-            <label class="form-check-label" for="inlineRadio1">No</label>
+            <input type="radio" name="active" id="inlineRadio1" value="No" > No
+           
           </div>
 
         </div>
@@ -104,7 +104,7 @@ if(isset($_POST['submit'])){
             $ext = end($temm);
 
             //rename the image
-            $image_name = "food_category_".rand(000,999).'.'.$ext;
+            $image_name = "food_category_".rand(0000,9999).'.'.$ext;
 
             $source_path = $_FILES['image']['tmp_name'];
 
@@ -118,7 +118,7 @@ if(isset($_POST['submit'])){
             if ($upload == false){
 
                 //set message 
-                $_SESSION['upload'] = "<p class='error'>Failed to upload image</div>";
+                $_SESSION['upload'] = "<p class='error'>*Failed to Upload Image.</div>";
                 //rdirect to add  category page
                 header('location:manage-category.php');
                 //stop the process
@@ -150,13 +150,13 @@ if(isset($_POST['submit'])){
 
     if($result == true){
         //query executed and category added
-        $_SESSION['add'] = "<div class = 'success'> Category Added Succesfully.</div>";
+        $_SESSION['add'] = "<div class = 'success'>*Category Added Succesfully.</div>";
         //redirect to the manage category page
         header('location:manage-category.php');
     }
     else{
         //failed to add category
-        $_SESSION['add'] = "<div class = 'success'> Failed to Add category.</div>";
+        $_SESSION['add'] = "<div class = 'success'> *Failed to Add Category.</div>";
         //redirect to the manage category page
         header('location:manage-category.php');
     }

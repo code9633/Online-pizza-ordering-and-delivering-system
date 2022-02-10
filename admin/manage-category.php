@@ -33,6 +33,25 @@ include('includes/navbar.php');
                     echo $_SESSION['update'];
                     unset($_SESSION['update']);
                   }
+
+                  //Displaying the no category found message
+                  if(isset($_SESSION['no-category-found'])){
+                    echo $_SESSION['no-category-found'];
+                    unset($_SESSION['no-category-found']);
+                  }
+
+                  //Display the message afer deletion
+                  if(isset($_SESSION['delete'])){
+                    echo $_SESSION['delete'];
+                    unset($_SESSION['delete']);
+                  }
+                  
+                  //Display the message if failed to remove the image
+                  if (isset($_SESSION['remove'])){
+
+                    echo $_SESSION['remove'];
+                    unset ($_SESSION['remove']);
+                }
               ?>
           </div>
 
@@ -96,7 +115,7 @@ include('includes/navbar.php');
                                     }
                                     else{
                                       //Display the message
-                                      echo "<div class = 'error'>Image not Added</div>";
+                                      echo "<div class = 'error'>Image Not Added</div>";
                                     }
                                 
                                 ?>
@@ -106,13 +125,12 @@ include('includes/navbar.php');
                               <td><?php echo $active;?></td>
 
                               <td>
-                                  <form action="update-admin.php?id=<?php echo $id; ?>" method="post">
+                                  <form action="update-category.php?id=<?php echo $id;?>" method="POST">
                                     <button type="submit" name="edit_btn" class="btn btn-success"> EDIT</button>
                                   </form>
                               </td>
                               <td>
-                                  <form action="" method="post">
-                                    <input type="hidden" name="delete_id" value="">
+                                  <form action="delete-category.php?id=<?php echo $id;?>&image_name=<?php echo $image_name;?>" method="POST">
                                     <button type="submit" name="delete_btn" class="btn btn-danger"> DELETE</button>
                                   </form>
                               </td>
