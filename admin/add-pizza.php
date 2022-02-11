@@ -82,9 +82,7 @@ include('includes/navbar.php');
                             ?>
                                 <option value="0">NO CATEGORY FOUND.</option>
                             <?php
-                        }
-
-                  
+                        } 
                   
                   ?>
               </select>
@@ -172,11 +170,11 @@ if(isset($_POST['submit'])){
             $ext = end($temm);
 
             //rename the image
-            $image_name = "pizza_name_".rand(0000,9999).'.'.$ext;
+            $image_name = "pizza_name_".rand(000,999).'.'.$ext;
 
             $source_path = $_FILES['image']['tmp_name'];
 
-            $destination_path = "../images/category/".$image_name;
+            $destination_path = "../images/pizza/".$image_name;
 
             // B. upload the image
             $upload = move_uploaded_file($source_path, $destination_path);
@@ -191,7 +189,6 @@ if(isset($_POST['submit'])){
                 header('location:add-pizza.php');
                 //stop the process
                 die();
-
             }
         }
         

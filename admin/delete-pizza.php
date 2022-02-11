@@ -21,7 +21,7 @@
         if($image_name != ""){
             //if has image and need to rmove from folde
             //get the image path
-            $path = "../images/food".$image_name;
+            $path = "../images/pizza/".$image_name;
 
             //remove image file from folder
             $remove = unlink($path); // return the true or false vlaue
@@ -30,9 +30,9 @@
 
             if ($remove == false){
                 //failed to remove image
-                $_SESSION['upload'] = "<div class = 'error'>Failed to remove image file.</div>";
+                $_SESSION['upload'] = "<p class = 'error'>*Failed to Remove Image.</p>";
                 //redirect to manage food
-                header('location'.SITEURL.'admin/manage-food.php');
+                header('location:manage-pizza.php');
                 //stop the prcess of deleting food
                 die();
             }
@@ -49,13 +49,13 @@
 
         if ($result == true){
             //food deleted
-            $_SESSION['delete'] = "<p class = 'success'> Pizza Deleted Successfully.</p>";
-            header('loaction'.SITEURL.'admin/manage-pizza.php');
+            $_SESSION['delete'] = "<p class = 'success'>*Pizza Deleted Successfully.</p>";
+            header('location:'.SITEURL.'admin/manage-pizza.php');
         }
         else{
             //failed to delete the food
-            $_SESSION['delete'] = "<p class = 'error'> Fialed to Delete.</p>";
-            header('loaction'.SITEURL.'admin/manage-pizza.php');
+            $_SESSION['delete'] = "<p class = 'error'> Fail to Delete.</p>";
+            header('location:'.SITEURL.'admin/manage-pizza.php');
         }
 
 
@@ -65,7 +65,7 @@
         // echo "redirect";
 
         $_SESSION['unsutorized '] = "<p class = 'error'>Unauthorized Acces.</p>";
-        header('loaction'.SITEURL.'admdin/manage-pizza.php');
+        header('location:'.SITEURL.'admin/manage-pizza.php');
     }
 
 ?>

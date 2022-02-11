@@ -48,15 +48,23 @@ include('includes/navbar.php');
                   
                   //Display the message if failed to remove the image
                   if (isset($_SESSION['upload'])){
-
                     echo $_SESSION['upload'];
                     unset ($_SESSION['upload']);
                   }
 
                   if (isset($_SESSION['unauthorized'])){
-                    
                     echo $_SESSION['unauthorized'];
                     unset($_SESSION['unauthorized']);
+                  }
+
+                  if(isset($_SESSION['no-category-details'])){
+                    echo $_SESSION['no-category-details'];
+                    unset($_SESSION['no-category-details']);
+                  }
+
+                  if (isset($_SESSION['remove-failed'])){
+                    echo $_SESSION['remove-failed'];
+                    unset($_SESSION['remove-failed']);
                   }
                   
               ?>
@@ -119,7 +127,7 @@ include('includes/navbar.php');
                                     if($image_name != ""){
                                       //Display the image
                                       ?>
-                                          <img src="<?php echo SITEURL;?>images/category/<?php echo $image_name;?>" width="200px" height="100px" >
+                                          <img src="<?php echo SITEURL;?>images/pizza/<?php echo $image_name;?>" width="200px" height="100px" >
                                       <?php
                                     
                                     }
