@@ -88,7 +88,7 @@
                     if ($current_image != ""){
                         // Display the image
                         ?>
-                        <img src="images/category/<?php echo $current_image;?>" width="150px" height="100px">
+                        <img src="../images/category/<?php echo $current_image;?>" width="150px" height="100px">
                         <?php
                     }
                     else{
@@ -157,7 +157,7 @@
             </div>
 
             <div class="modal-footer">
-                <input type="hidden" name = "current_image" value="<?php $current_image;?>"> <!-- Get the name of the current image -->
+                <input type="hidden" name = "current_image" value="<?php echo $current_image;?>"> <!-- Get the name of the current image -->
                 <input type="hidden" name = "id" value="<?php echo $id;?>">
 
                 <a href="manage-pizza.php" class="btn btn-danger">CANCEL</a>

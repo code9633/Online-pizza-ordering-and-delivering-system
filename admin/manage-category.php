@@ -109,7 +109,7 @@ include('includes/navbar.php');
                                     if($image_name != ""){
                                       //Display the image
                                       ?>
-                                          <img src="<?php echo SITEURL;?>images/category/<?php echo $image_name;?>" width="200px" height="100px" >
+                                          <img src="../images/category/<?php echo $image_name;?>" width="200px" height="100px" >
                                       <?php
                                     
                                     }

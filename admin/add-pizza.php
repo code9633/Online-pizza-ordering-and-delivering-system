@@ -40,7 +40,7 @@ include('includes/navbar.php');
             <label> Price </label>
                 <div class="input-group-prepend">
                     <span class="input-group-text">$</span>
-                    <input type="number" name="price" class="form-control" >
+                    <input type="text" name="price" class="form-control" >
                     <span class="input-group-text">.00</span>
                 </div>
           </div>
@@ -202,6 +202,7 @@ if(isset($_POST['submit'])){
     //2.create sql query to insert category into databse
     $sql2 = "INSERT INTO food SET
         title = '$title',
+        description = '$description',
         price = $price,
         image_name = '$image_name',
         category_id = '$category',

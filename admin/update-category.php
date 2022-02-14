@@ -70,7 +70,7 @@
                     if ($current_image != ""){
                         // Display the image
                         ?>
-                        <img src="images/category/<?php echo $current_image;?>" width="150px" height="100px">
+                        <img src="../images/category/<?php echo $current_image;?>" width="150px" height="100px">
                         <?php
                     }
                     else{
@@ -80,7 +80,7 @@
             </div>
             <div class="form-group">
                 <label>New Image</label>
-                <input type="file" name="image" class="form-control" id="customFile">
+                <input type="file" name="image" class="form-control" >
             </div>
 
             <div class="form-group">
@@ -100,7 +100,7 @@
             </div>
 
             <div class="modal-footer">
-                <input type="hidden" name = "current_image" value="<?php $current_image;?>"> <!-- Get the name of the current image -->
+                <input type="hidden" name = "current_image" value="<?php echo $current_image;?>"> <!-- Get the name of the current image -->
                 <input type="hidden" name = "id" value="<?php echo $id;?>">
 
                 <a href="manage-categ" class="btn btn-danger">CANCEL</a>
@@ -141,7 +141,7 @@ if (isset($_POST['updatebtn'])){
             $ext = end($temp);
 
             //Rename of the image
-            $iamge_name = "food_category_".rand(000, 999).'.'.$ext;
+            $image_name = "food_category_".rand(000, 999).'.'.$ext;
 
             $source_path = $_FILES['image']['tmp_name'];
 
@@ -157,7 +157,7 @@ if (isset($_POST['updatebtn'])){
                 //set the message
                 $_SESSION['upload'] = "<div class = 'error'>*Faild to Upload the Image.</div>";
                 //redirect to the manage caegoory page
-                header('loaction:manage-categpry.php');
+                header('loaction:manage-category.php');
                 // stop the process
                 die();
             }
@@ -169,7 +169,7 @@ if (isset($_POST['updatebtn'])){
 
                 //check whether the image is removed or not
                 //if failed to remove then display meaasage and stop the prcess
-                if ($remove = true){
+                if ($remove == true){
                     //failed to remove the image
                     $_SESSION['failed_remove'] = "<p class = 'error'>*Failed to Remove the Curent Image. </p>";
                     header('loaction:manage-category.php');
@@ -178,12 +178,10 @@ if (isset($_POST['updatebtn'])){
                 }
 
             }
-            
-
 
         }
         else{
-            $iamge_name = $current_image;
+            $image_name = $current_image;
         }
     }
     else{
