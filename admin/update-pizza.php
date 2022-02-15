@@ -88,7 +88,7 @@
                     if ($current_image != ""){
                         // Display the image
                         ?>
-                        <img src="../images/category/<?php echo $current_image;?>" width="150px" height="100px">
+                        <img src="../images/pizza/<?php echo $current_image;?>" width="150px" height="100px">
                         <?php
                     }
                     else{
@@ -250,7 +250,7 @@ if (isset($_POST['updatebtn'])){
         }
         else{
             //Image is not available
-            $iamge_name = $current_image;
+            $image_name = $current_image;
         }
     }
     else{

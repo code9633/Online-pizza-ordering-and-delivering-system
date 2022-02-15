@@ -46,7 +46,7 @@
                                             <div class="offer-menu2-thumb">
                                                 <img class="offer-menu2-inner-frame" src="images/inner-shadow.png">
                                             </div>
-                                            <div class="offer-menu2-thumb-image"><img src="images/pizza/<?php echo $image_name;?>" style= "width:313px; heigth: 220px;" ></div>
+                                            <div class="offer-menu2-thumb-image" ><img src="images/pizza/<?php echo $image_name;?>" style= "width:313px; heigth: 220px;" ></div>
                                             <div class="clear"></div>
                                             <span class="offer-menu2-icon flaticon-pizza-slice"></span>
                                             <div class="offer-menu2-details">
