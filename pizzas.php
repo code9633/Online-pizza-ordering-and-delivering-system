@@ -1,7 +1,7 @@
 <?php include('front-section/header.php');?>
 
         <div class="container-wrapper">
-            <div class="page-bg" style=" background-image: url(upload/bg-pizza.jpg); "></div>
+            <div class="page-bg" style=" background-image: url(upload/bgimage.png); height:200px; "></div>
             <div id="fullwidth-container">
                 <!-- start container -->
                 <div class="page-title-wrapper">
