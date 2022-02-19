@@ -12,8 +12,8 @@
     <meta name="format-detection" content="telephone=no" />
 
     <!-- Favicon Icon -->
-    <link rel="shortcut icon" href="../images/favicon.ico" type="image/vnd.microsoft.icon" />
-    <link rel="icon" href="images/favicon.ico" type="image/x-ico" />
+    <link rel="shortcut icon" href="../images/pizza.ico" type="image/vnd.microsoft.icon" />
+    <link rel="icon" href="images/pizza.ico" type="image/x-ico" />
     <title>Pizza Restaurant</title>
 
     <link rel='stylesheet' href='rs-slider/css/settings.css' type='text/css' media='all' />

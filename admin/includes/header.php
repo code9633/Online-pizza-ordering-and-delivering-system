@@ -15,6 +15,8 @@
   <meta name="author" content="">
 
   <title> Pizza | Admin Panel</title>
+  <link rel="shortcut icon" href="../images/pizza.ico" type="image/vnd.microsoft.icon" />
+  <link rel="icon" href="images/pizza.ico" type="image/x-ico" />
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
